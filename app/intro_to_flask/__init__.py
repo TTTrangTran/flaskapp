@@ -5,15 +5,15 @@ app.secret_key = 'development key'
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 465
 app.config["MAIL_USE_SSL"] = True
-app.config["MAIL_USERNAME"] = 'ttrang1311@gmail.com'
-app.config["MAIL_PASSWORD"] = 'thuytranghcm94'
+app.config["MAIL_USERNAME"] = 'jessicatran1311@gmail.com'
+app.config["MAIL_PASSWORD"] = 'jessica1311'
 
-from .routes import mail
+from app.intro_to_flask.routes import mail
 mail.init_app(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql:/    /TrangTran:kocopass@localhost/development'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://TrangTran:kocopass@localhost/development'
 
-from .models import db
+from app.intro_to_flask.models import db
 db.init_app(app)
 
-import routes
+

@@ -1,9 +1,9 @@
 # import Flask class & render_template function
-from intro_to_flask import app
+from app.intro_to_flask import app
 from flask import render_template, request, flash, session, redirect, url_for
-from .forms import ContactForm, SignupForm, SigninForm
+from app.intro_to_flask.forms import ContactForm, SignupForm, SigninForm
 from flask_mail import Message, Mail 
-from .models import db, User
+from app.intro_to_flask.models import db, User
 
 @app.route('/testdb')
 def testdb():
@@ -36,7 +36,7 @@ def contact():
       return render_template('contact.html', form=form)
     else:
       print("sending email")
-      msg = Message(form.subject.data, sender='contact@example.com', recipients=['ttrang1311@gmail.com'])
+      msg = Message(form.subject.data, sender='contact@example.com', recipients=['jessicatran1311@gmail.com'])
       msg.body = """
       From: %s &lt;%s&gt;
       %s
